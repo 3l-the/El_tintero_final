@@ -16,7 +16,7 @@ class PostSeeder extends Seeder
         $categories = new Post();
         $categories->title = "Post a traves de seeder";
         $categories->content = "Este post fue añadido a traves del seeder";
-        $categories->user_id = 1;
+        $categories->account_id = 1;
         $categories->save();
     }
 }

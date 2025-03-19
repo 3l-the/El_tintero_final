@@ -15,7 +15,7 @@ class ReplySeeder extends Seeder
     {
         $categories = new Reply();
         $categories->content = "Respuesta a traves de seeder";
-        $categories->user_id = 1;
+        $categories->account_id = 1;
         $categories->post_id = 1;
         $categories->save();
     }

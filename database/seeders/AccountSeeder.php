@@ -14,7 +14,7 @@ class AccountSeeder extends Seeder
     public function run(): void
     {
         $categories = new Account();
-        $categories->user = "Tester";
+        $categories->userName = "Tester";
         $categories->password = "Prueba_123";
         $categories->save();
     }
