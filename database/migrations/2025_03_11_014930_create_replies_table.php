@@ -14,8 +14,8 @@ return new class extends Migration
         Schema::create('replies', function (Blueprint $table) {
             $table->id();
             $table->text('content');
-            $table->foreignId('user_id');
-            $table->foreignId('post_id');
+            $table->foreignId('account_id')->references('id')->on('accounts');
+            $table->foreignId('post_id')->references('id')->on('posts');
             $table->timestamps();
         });
     }
