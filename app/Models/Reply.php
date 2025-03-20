@@ -12,7 +12,7 @@ class Reply extends Model
 
     protected $fillable = [
         'content',
-        'user_id',
+        'account_id',
         'post_id',
     ];
 

@@ -35,7 +35,7 @@ class ReplyController extends Controller
     public function store(Request $request) {
         Reply::create([
             'content' => $request->content,
-            'user_id' => $request->account_id,
+            'account_id' => $request->account_id,
             'post_id' => $request->post_id,
         ]); 
         return redirect()->route('posts.details')

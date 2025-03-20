@@ -28,7 +28,7 @@ class PostController extends Controller
         Post::create([
             'title' => $request->title,
             'content' => $request->content,
-            'user_id' => $request->user_id,
+            'account_id' => $request->user_id,
         ]); 
         return redirect()->route('elTintero.index')
         ->with('success', 'Publicación creada exitosamente');

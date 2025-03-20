@@ -14,7 +14,7 @@ class AccountController extends Controller
 
     public function store() {
         Account::create([
-            'user' => request('user'),
+            'userName' => request('userName'),
             'password' => request('password'),
         ]);
 
