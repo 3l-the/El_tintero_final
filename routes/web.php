@@ -7,11 +7,3 @@ use App\Http\Controllers\PostController;
 Route::get('/', function () {
     return view('welcome');
 });
-
-Route::resources([
-    '/account' => AccountController::class
-]);
-
-Route::resources([
-    '/post' => PostController::class
-]);
