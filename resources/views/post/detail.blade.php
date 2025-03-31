@@ -9,37 +9,16 @@
     @include('common.header')
 </header>
 <body>
-    <div>
-        <h2>{{ $post->post_subject }}</h2>
-        <h5>Autor: {{ $user->name }}</h5>
-        <p>{{ $post->post_content }}</p>
+    <div class="container flex-wrap mt-3">
+        <div class="card mb-2 rounded">
+            <a class="subject_detail">{{ $post->post_subject }}</a>
+            <a class="user_detail" href="{!! url('/post/user', [$post['user_id']]) !!}">{{ $user->name }}</a>
+            <p>{{ $post->post_content }}</p>
+        </div>
     </div>
-    <div>
-        <table class="table">
-            <tr>
-                <th width="20%">Autor</th>
-                <th width="70%">Mensaje</th>
-                <th width="10%">Fecha</th>
-            </tr>
-            @foreach($replies as $reply)
-                <tr>
-                    <td width="20%"  height="100" valign="top">
-                        <a href="{!! url('/post/user', [$reply['user_id']]) !!}">
-                            {{ $reply['reply_by'] }}
-                        </a>
-                    </td>
-                    <td width="60%"  height="100" valign="top">
-                        {{ $reply['reply_content'] }}
-                    </td>
-                    <td width="10%"  height="100" valign="top">{{ $reply['reply_date'] }}</td>
-                </tr>
-            @endforeach
-        </table>
-    </div>
-    
     @if (auth()->check())
-    <div>
-        <form method="POST" action="/reply/save">
+    <div class="container flex-wrap mt-3">
+        <form class="rounded mt-3" method="POST" action="/reply/save">
             {{ csrf_field() }}
             <input type="hidden" class="form-control" id="post_id" name="post_id" value="{{ $post->post_id }}">
             <label for="reply_message">Respuesta: </label>
@@ -52,5 +31,21 @@
         </form>
     </div> 
     @endif
+    <div class="container flex-wrap mt-3">
+        @forelse($replies as $reply)
+        <div class="reply mb-2 rounded">
+            <a class="user_reply" href="{!! url('/post/user', [$reply['user_id']]) !!}">
+                {{ $reply['reply_by'] }}
+            </a>
+            <br>
+            <i>{{ $reply['reply_date'] }}</i>
+            <p>{{ $reply['reply_content'] }}</p>
+        </div> 
+        @empty
+        <div class="reply rounded">
+            <h4 class="justify-content-center">Aun no hay respuestas, se el primero en responder</td>
+        </div>
+        @endforelse
+    </div>
 </body>
 </html>

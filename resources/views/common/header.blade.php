@@ -3,6 +3,14 @@
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
 </head>
 <style>
+nav{
+  background-color: #FE7F2D;
+  border-bottom-style: solid;
+  border-width: 5px;
+  border-color: #77878B;
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
 nav ul {
   list-style: none;
   margin: 0;
@@ -19,15 +27,106 @@ nav a {
   display: block;
   padding: 5px 10px;
   text-decoration: none;
-  color: #333; 
+  color: #FFFFFF;
+  font-size: 22px;
   font-weight: bold;
 }
-nav a:hover {
-  background-color: #333; 
-  color: #fff; 
+nav a:hover { 
+  color: #533E2D; 
 }
+
+div.card{
+  background-color: #533E2D;
+  color: #FFFFFF;
+  padding: 20px;
+  margin-bottom: 20px;
+}
+
+div.reply{
+  background-color: #77878B;
+  color: #FFFFFF;
+  padding: 20px;
+  margin-bottom: 20px;
+}
+
+form{
+  background-color: #6A8D73;
+  padding: 20px;
+  margin-bottom: 20px;
+}
+form div{
+  margin-bottom: 5px;
+}
+
+label{
+  font-weight: bold;
+  font-size: 20px;
+}
+
+a.subject_detail{
+  text-decoration: none;
+  color: #FFFFFF;
+  margin-bottom: 10px;
+  font-weight: bold;
+  font-size: 32px;
+}
+a.subject{
+  text-decoration: none;
+  color: #FFFFFF;
+  margin-bottom: 10px;
+  font-weight: bold;
+  font-size: 22px;
+}
+a.subject:hover{
+  color: #77878B;
+  text-decoration: underline;
+}
+a.user{
+  text-decoration: none;
+  color: #FFFFFF;
+  margin-bottom: 10px;
+  font-weight: bold;
+  font-size: 18px;
+}
+a.user:hover{
+  color: #77878B;
+  text-decoration: underline;
+}
+a.user_detail{
+  text-decoration: italic;
+  color: #FFFFFF;
+  margin-bottom: 10px;
+  font-weight: bold;
+  font-size: 18px;
+}
+a.user_detail:hover{
+  color: #77878B;
+  text-decoration: underline;
+}
+a.user_reply{
+  text-decoration: italic;
+  color: #FFFFFF;
+  margin-bottom: 10px;
+  font-weight: bold;
+  font-size: 18px;
+}
+a.user_reply:hover{
+  color: #533E2D;
+  text-decoration: underline;
+}
+
+p{
+  color: #FFFFFF;
+  margin-bottom: 10px;
+  font-size: 18px;
+}
+
+i{
+  color: #ffffff82;
+}
+
 </style>
-<nav class="py-2 bg-body-tertiary border-bottom">
+<nav>
   <div class="container d-flex flex-wrap">
     <ul class="nav me-auto">
         <li>
@@ -40,12 +139,12 @@ nav a:hover {
         @if (!auth()->check())
             <li class="nav-item">
                 <a href="{!! url('/register/index') !!}">
-                REGISTRARSE
+                Registrarse
                 </a>
             </li>
             <li class="nav-item">
                 <a href="{!! url('/login/index') !!}">
-                INICIAR SESIÓN
+                Iniciar sesión
                 </a>
             </li>
         @endif
@@ -57,12 +156,12 @@ nav a:hover {
             </li>
             <li class="nav-item">
                 <a href="{!! url('/post/create') !!}">
-                CREAR PUBLICACIÓN
+                Crear publicación
                 </a>
             </li>
             <li class="nav-item">
                 <a href="{!! url('/logout') !!}">
-                CERRAR SESIÓN
+                Cerrar sesión
                 </a>
             </li>
         @endif

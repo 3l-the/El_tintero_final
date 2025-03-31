@@ -9,28 +9,29 @@
     @include('common.header')
 </header>
 <body>
-    <table class="table">
-        @forelse($posts as $post)
-            <tr>
-                <td>
-                    <a href="{!! url('/post/detail', [$post['post_id']]) !!}">
-                        {{ $post['post_subject'] }}
-                    </a>    
-                </td>
-                <td>
-                    <a href="{!! url('/post/user', [$post['user_id']]) !!}">
-                        {{ $post['user_name'] }}
-                    </a>
-                </td>
-                <td>
+    <div class="container flex-wrap mt-3">
+    @forelse($posts as $post)
+        <div class="card mb-2 rounded">
+            <div>
+                <a class="subject" href="{!! url('/post/detail', [$post['post_id']]) !!}">
+                    {{ $post['post_subject'] }}
+                </a> 
+            </div>
+            <div>
+                <a class="user" href="{!! url('/post/user', [$post['user_id']]) !!}">
+                    {{ $post['user_name'] }}
+                </a>
+            </div>
+            <div>
+                <i class="date">
                     {{ $post['post_date'] }}
-                </td>
-            </tr>
-        @empty
-            <tr>
-                <td colspan="4">No hay publicaciones</td>
-            </tr>
-        @endforelse
-    </table>
+                </i> 
+            </div>
+        </div>
+    @empty
+        <div class="card rounded">
+            <h2>No hay publicaciones</h2>
+        </div>
+    @endforelse
 </body>
 </html>
