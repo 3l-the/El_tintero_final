@@ -30,7 +30,7 @@ class PostController extends Controller
     }
     public function index()
     {
-        $posts = Post::all();
+        $posts = Post::orderBy('post_id', 'DESC')->get();
         $arrPosts = array();
         foreach ($posts as $post) {
             $user = User::where('id', $post->post_by)->first();
@@ -79,7 +79,7 @@ class PostController extends Controller
     public function userposts($id)
     {
         $user = User::where('id', $id)->first();
-        $posts = Post::where('post_by', $id)->get();
+        $posts = Post::where('post_by', $id)->orderBy('post_id', 'DESC')->get();
         $arrPosts = array();
         foreach ($posts as $post) {
             $arrPosts[] = array(
