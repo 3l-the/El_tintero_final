@@ -131,7 +131,7 @@ i{
     <ul class="nav me-auto">
         <li>
             <a href="{!! url('/post/index') !!}">
-            EL TINTERO
+            <img src="{!! asset('/img/Logo_texto.png') !!}" alt="El tintero" width="150">
             </a>
         </li>
     </ul>
