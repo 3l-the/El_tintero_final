@@ -25,7 +25,7 @@ nav li:last-child {
 }
 nav a {
   display: block;
-  padding: 5px 10px;
+  padding: 10px 10px;
   text-decoration: none;
   color: #FFFFFF;
   font-size: 22px;
@@ -127,11 +127,11 @@ i{
 
 </style>
 <nav>
-  <div class="container d-flex flex-wrap">
+  <div class="container d-flex flex-wrap justify-content-center">
     <ul class="nav me-auto">
         <li>
             <a href="{!! url('/post/index') !!}">
-            <img src="{!! asset('/img/Logo_texto.png') !!}" alt="El tintero" width="150">
+            <img src="{!! asset('/img/Logo_texto.png') !!}" alt="El tintero" width="130">
             </a>
         </li>
     </ul>
