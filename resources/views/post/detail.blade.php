@@ -12,7 +12,7 @@
     <div class="container flex-wrap mt-3">
         <div class="card mb-2 rounded">
             <a class="subject_detail">{{ $post->post_subject }}</a>
-            <a class="user_detail" href="{!! url('/post/user', [$post['user_id']]) !!}">{{ $user->name }}</a>
+            <a class="user_detail" href="{!! url('/post/user', [$user['id']]) !!}">{{ $user->name }}</a>
             <p>{{ $post->post_content }}</p>
         </div>
     </div>
