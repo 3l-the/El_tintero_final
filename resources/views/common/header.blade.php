@@ -49,6 +49,13 @@ div.reply{
   margin-bottom: 20px;
 }
 
+div.announcement{
+  background-color: #6A8D73;
+  color: #FFFFFF;
+  padding: 20px;
+  margin-bottom: 20px;
+}
+
 form{
   background-color: #6A8D73;
   padding: 20px;

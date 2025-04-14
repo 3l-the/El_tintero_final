@@ -29,7 +29,13 @@
                 <button style="cursor:pointer" type="submit" class="btn btn-primary">Publicar respuesta</button>
             </div>
         </form>
-    </div> 
+    </div>
+    @else
+    <div class="container flex-wrap mt-3">
+        <div class="announcement rounded">
+            <h4 class="justify-content-center">Inicia sesión o registrate para responder</td>
+        </div>
+    </div>
     @endif
     <div class="container flex-wrap mt-3">
         @forelse($replies as $reply)
@@ -42,7 +48,7 @@
             <p>{{ $reply['reply_content'] }}</p>
         </div> 
         @empty
-        <div class="reply rounded">
+        <div class="announcement rounded">
             <h4 class="justify-content-center">Aun no hay respuestas, se el primero en responder</td>
         </div>
         @endforelse
